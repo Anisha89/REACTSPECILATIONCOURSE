@@ -51,17 +51,18 @@ import { Card, CardImg, CardText, CardBody, CardTitle, ListGroup, ListGroupItem 
     }
 
     const  DishDetail = (props) =>  {
-        
+       let comments= null;
         if (props.dish != null) {
-            
-            return (
+          comments=props.dish.comments
+           
+        }
+         return (
                 <div className="row">
                    
                     <RenderDish dish= {props.dish} />
-                    <RenderComments comments= {props.dish.comments}  />
+                    <RenderComments dishComments= {comments}  />
                 </div>
             );
-        }
        
     }
 
